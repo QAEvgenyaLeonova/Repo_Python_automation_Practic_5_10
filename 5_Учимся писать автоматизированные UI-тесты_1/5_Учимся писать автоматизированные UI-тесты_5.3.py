@@ -58,7 +58,8 @@ driver.quit()
 
 
 '''задание_4'''
-'''from time import sleep
+'''
+from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -71,34 +72,27 @@ driver.quit()
 
 sleep(10)'''
 
+'''
+from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.keys import Keys
 
-# Укажите путь к ChromeDriver (замените на путь к вашему файлу)
-service = Service('/path/to/chromedriver')  # например, /usr/local/bin/chromedriver на macOS
-driver = webdriver.Chrome(service=service)
+driver = webdriver.Chrome()
+driver.get("https://www.google.com")
 
-# Открываем сайт Python.org
-driver.get('https://www.python.org/')
+# Найти строку поиска и ввести "Selenium"
+search_box = driver.find_element(By.NAME, "q")
+search_box.send_keys("Selenium")
 
-# Находим кнопку "Donate" по классу или тексту (из DOM на скриншоте видно класс "donate-button")
-donate_button = driver.find_element(By.CLASS_NAME, "donate-button")
+# Нажать Enter для выполнения поиска
+search_box.send_keys(Keys.RETURN)
 
-# Кликаем по кнопке
-donate_button.click()
-
-# Ждём несколько секунд (опционально)
-driver.implicitly_wait(5)
-
-# Закрываем браузер (опционально)
 driver.quit()
 
+sleep(3)
 
-
-
-
-
+'''
 
 
 
