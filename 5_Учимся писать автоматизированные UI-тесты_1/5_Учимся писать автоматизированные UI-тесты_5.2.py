@@ -43,7 +43,11 @@ for book in books:
 
 sleep(3)
 
-
+#https://www.selenium.dev/documentation/ - get
+#https://www.selenium.dev/documentation/webdriver/interactions/navigation/ - back
+#https://www.selenium.dev/documentation/webdriver/elements/finders/ - driver.find_element(By.CLASS_NAME, "tomatoes") #видим неопознанный класc By
+#https://www.selenium.dev/documentation/webdriver/actions_api/keyboard/ - send_keys/ from selenium.webdriver.common.keys import Keys
+#https://www.selenium.dev/documentation/webdriver/elements/information/#text-content - подсказывает, как вывести информацию из элемента
 
 
 
