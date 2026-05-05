@@ -10,16 +10,19 @@ from webdriver_manager.firefox import GeckoDriverManager
 from  selenium.webdriver.edge.service  import  Service  as  EdgeService
 from  webdriver_manager.microsoft  import  EdgeChromiumDriverManager
 
-#browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-#browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+def make_screenshot(browser):
+    browser.maximize_window()  # для разворачивания окна
+    browser.get("https://ya.ru/")  # для перехода на нужную страницу
+    sleep(5)  # для паузы на загрузку контента страницы
+
+    browser.save_screenshot = f'./ya_{browser.name}.png'  # для сохранения скриншота
+    browser.quit()  # для закрытия окна
+
+chrome = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+ff = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 edge_driver_path = "C:\\Users\\user\\Documents\\2.НЕ ПЕРЕКИНУТОЕ\\5.Автоматизация тестирования на Python\\Урок_1. Знакомство с языком Python\\Эдже_драйвер\\msedgedriver.exe"
-browser = webdriver.Edge(service=EdgeService(executable_path=edge_driver_path))
+edge = webdriver.Edge(service=EdgeService(executable_path=edge_driver_path))
 
-
-browser.maximize_window()  # для разворачивания окна
-browser.get("https://ya.ru/")  # для перехода на нужную страницу
-sleep(5)  # для паузы на загрузку контента страницы
-
-browser.save_screenshot('./ya.png' + browser.name + 'png')  # для сохранения скриншота
-browser.quit()  # для закрытия окна
-
+make_screenshot(chrome)
+make_screenshot(ff)
+make_screenshot(edge)
