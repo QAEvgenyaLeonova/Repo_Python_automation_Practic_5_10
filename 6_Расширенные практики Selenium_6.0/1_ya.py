@@ -23,3 +23,23 @@ sleep(5)  # для паузы на загрузку контента стран�
 browser.save_screenshot('./ya.png' + browser.name + 'png')  # для сохранения скриншота
 browser.quit()  # для закрытия окна
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
