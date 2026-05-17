@@ -10,5 +10,6 @@ browser.get('https://rzd.ru')
 url = browser.current_url
 
 print(url)
+print(browser.title)
 
 browser.quit()
