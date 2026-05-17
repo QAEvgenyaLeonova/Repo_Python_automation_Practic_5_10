@@ -26,8 +26,7 @@ def test_cart_counter():
         driver.add_cookie(my_cookie)
 
         # Поиск книги по слову "Python"
-        search_field = driver.find_element(By.CSS_SELECTOR, '#search-field')
-        search_field.send_keys('Python')
+        driver.find_element(By.CSS_SELECTOR, '#search-field').send_keys('Python')
         driver.find_element(By.CSS_SELECTOR, 'button[type=submit]').click()
 
         sleep(1)
@@ -70,3 +69,4 @@ def test_cart_counter():
     except Exception as e:
         print(f"Произошла ошибка: {e}")
         driver.quit()
+
