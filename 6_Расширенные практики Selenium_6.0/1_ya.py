@@ -11,9 +11,9 @@ from  selenium.webdriver.edge.service  import  Service  as  EdgeService
 from  webdriver_manager.microsoft  import  EdgeChromiumDriverManager
 
 browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-#browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
-#edge_driver_path = "C:\\Users\\user\\Documents\\2.НЕ ПЕРЕКИНУТОЕ\\5.Автоматизация тестирования на Python\\Урок_1. Знакомство с языком Python\\Эдже_драйвер\\msedgedriver.exe"
-#browser = webdriver.Edge(service=EdgeService(executable_path=edge_driver_path))
+browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+edge_driver_path = "C:\\Users\\user\\Documents\\2.НЕ ПЕРЕКИНУТОЕ\\5.Автоматизация тестирования на Python\\Урок_1. Знакомство с языком Python\\Эдже_драйвер\\msedgedriver.exe"
+browser = webdriver.Edge(service=EdgeService(executable_path=edge_driver_path))
 
 
 browser.maximize_window()  # для разворачивания окна
