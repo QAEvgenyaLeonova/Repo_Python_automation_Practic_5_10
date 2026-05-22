@@ -15,6 +15,7 @@ football_stats = {
 }
 
 empty_dict = {}
+
 def test_empty_dict():
     assert len(empty_dict) == 0
 
@@ -22,9 +23,14 @@ def test_read_value():
     count = football_stats.get('Число стран')
     assert count == 48
 
-def test_read_velue():
+def test_read_values():
     country = football_stats['Страна']
     assert country == 'Катар'
+
+def test_write_value():
+    football_stats['Число стран'] = 50
+    count = football_stats.get('Число стран')
+    assert count == 50
 
 def test_write_new_value():
     len_before = len(football_stats)
@@ -32,4 +38,5 @@ def test_write_new_value():
     winner = football_stats['Победитель']
     assert winner == 'Аргентина'
     assert len(football_stats) == len_before + 1
-    print(football_stats)
+    print(f'длина до {len_before} длина после {len(football_stats)}')
+
