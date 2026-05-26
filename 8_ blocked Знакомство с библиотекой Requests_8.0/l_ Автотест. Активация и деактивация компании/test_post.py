@@ -88,8 +88,32 @@ def test_delete():
     deleted = api.get_company(new_id)
     assert deleted['detail'] == 'Компания не найдена'
 
+def test_deactivate():
+    # Создаем компанию
+    name = "Company to be deactivated"
+    result = api.create_company(name)
+    new_id = result["id"]
+    # Деактивируем компанию
+    body = api.set_active_state(new_id, False)
 
+    # Проверяем, что у компании статус «неактивная»
+    assert body["is_active"] is False
 
+def test_deactivate_and_activate_back():
+    #Создаем компанию:
+    name = "Company to be deactivated"
+    result = api.create_company(name)
+    new_id = result["id"]
+
+    # Деактивируем компанию с помощью параметра False
+    body_d = api.set_active_state(new_id, False)
+    # Проверяем, что компания не активная
+    assert body_d["is_active"] is False
+
+    # Активируем компанию с помощью параметра True
+    body_a = api.set_active_state(new_id, True)
+    # Проверяем, что компания активная
+    assert body_a["is_active"] is True
 
 
 

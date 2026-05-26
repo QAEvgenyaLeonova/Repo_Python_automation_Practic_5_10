@@ -54,7 +54,13 @@ class CompanyApi:
         resp = requests.delete(url_with_token)
         return resp.json()
 
+    def set_active_state(self, id, is_active):
+        client_token = self.get_token()
 
+        url_with_token = f"{self.url}/company/status_update/{id}?client_token={client_token}"
+        resp = requests.patch(url_with_token,
+                              json={"is_active": is_active})
+        return resp.json()
 
 
 
