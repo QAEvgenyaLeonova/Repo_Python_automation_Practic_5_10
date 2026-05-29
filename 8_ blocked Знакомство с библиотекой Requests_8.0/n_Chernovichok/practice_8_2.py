@@ -74,3 +74,5 @@ class CompanyApi:
         }
         resp = requests.patch(url_with_token, json=data_active)
         return resp.json()
+
+
