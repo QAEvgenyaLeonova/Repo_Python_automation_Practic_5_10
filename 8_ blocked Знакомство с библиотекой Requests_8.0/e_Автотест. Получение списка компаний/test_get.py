@@ -21,3 +21,4 @@ def test_get_active_companies():
     #Проверить что список 1 > больше списка 2
     assert len(full_list) > len(filtered_list)
 
+
